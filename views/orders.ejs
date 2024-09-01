@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orders</title>
+</head>
+<body>
+  <h1>Orders</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Email</th>
+        <th>Items</th>
+        <th>Order Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% orders.forEach(order => { %>
+        <tr>
+          <td><%= order.email %></td>
+          <td><%= order.items.join(', ') %></td>
+          <td><%= order.placedAt %></td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</body>
+</html>
