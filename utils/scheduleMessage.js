@@ -5,7 +5,8 @@ const Order = require('../models/Order');
 
 const scheduleMessage = (email, checkoutId) => {
   const scheduleTimes = [30 * 60 * 1000, 24 * 60 * 60 * 1000, 3 * 24 * 60 * 60 * 1000];
-  // for testing -> const scheduleTimes = [1000, 10 * 1000, 20 * 1000];
+  // less time for testing  
+  // const scheduleTimes = [1000, 10 * 1000, 20 * 1000];
   scheduleTimes.forEach((time, index) => {
     nodeSchedule.scheduleJob(Date.now() + time, async () => {
       try {
